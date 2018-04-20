@@ -1,0 +1,17 @@
+//rem - better support for accessibility
+
+html {
+    font-size: 62.5% // now 1 rem is 10 px (much easier to visualize)
+}
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: $msize;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
