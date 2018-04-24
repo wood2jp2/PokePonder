@@ -20,7 +20,17 @@ module.exports = {
             use: [
                 'style-loader',
                 'css-loader',
-                'sass-loader'  
+                'sass-loader',
+            ]
+        },  {
+            test: /\.(jpg|png|gif|svg|pdf|ico)$/,
+            use: [
+                {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[path][name]-[hash:8].[ext]'
+                    },
+                },
             ]
         }]
     },
@@ -28,7 +38,10 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, 'public'),
         historyApiFallback: true
-    }
+    },
+    node: {
+        fs: 'empty'
+      }
 }
 
 
